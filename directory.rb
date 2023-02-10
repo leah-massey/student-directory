@@ -22,11 +22,11 @@ def input_students
   #create and empty array
   
   #get the first name
-  name = gets.chomp.capitalize
+  name = STDIN.gets.chomp.capitalize
   #while the name is not empty, repeat this code
   while !name.empty? do 
     puts "What cohort are they in?"
-    cohort = gets.chomp.downcase.to_sym
+    cohort = STDIN.gets.chomp.downcase.to_sym
     #add the student hash to the array
     
     if cohort.empty?
@@ -37,14 +37,14 @@ def input_students
     
     until cohort_months.include?(cohort)
       puts "please repeat that"
-      cohort = gets.chomp.downcase.to_sym
+      cohort = STDIN.gets.chomp.downcase.to_sym
     end
     
       @students << {name: name, cohort: cohort}
       puts "Now we have #{@students.count} students"
       #get another name from the user
       puts "Please enter the name of the next student or to finish press return"
-      name = gets.chomp.capitalize
+      name = STDIN.gets.chomp.capitalize
   end
   #return the array of students 
    
@@ -136,12 +136,14 @@ def interactive_ruby
 
   loop do 
     print_menu
-    process(gets.chomp)
+    process(STDIN.gets.chomp)
   end
   
 end
 
 
 #nothing happens until we call these methods
+try_load_students
 interactive_ruby
+
 
