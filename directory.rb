@@ -17,7 +17,7 @@
 @students = []
 def input_students
   
-  puts "Please enter the names of the students"
+  puts "Please enter the names of your first student"
   puts "To finish, just hit return twice"
   #create and empty array
   
@@ -90,12 +90,17 @@ def process(selection)
       show_students 
     when "3"
       save_students
+      puts "\nYour input has been successfully saved.\n"
+      puts ""
     when "4"
       load_students
+      puts "\nStudents already registered have now been loaded onto your list and are ready to view.\n"
+      puts""
     when "9"
       exit
     else
-      puts "I don't know what you meant, try again"
+      puts "\nI don't know what you meant, try again\n"
+      puts ""
   end
 end
 
